@@ -41,7 +41,6 @@ const Home = () => {
 				</div>
 			</div>
 
-            <Spinner></Spinner>
 		</div>
 	);
 };
