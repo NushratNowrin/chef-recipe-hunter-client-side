@@ -8,7 +8,7 @@ import Spinner from "../../Pages/Shared/Spinner/Spinner";
 const Chefs = () => {
 	const [chefs, setChefs] = useState([]);
 	useEffect(() => {
-		fetch("http://localhost:5000/chefs")
+		fetch("https://chef-recipe-hunter-server-side-nowrin2023-gmailcom.vercel.app/chefs")
 			.then((res) => res.json())
 			.then((data) => setChefs(data));
 	}, []);

@@ -4,6 +4,7 @@ import { AiFillLike } from "react-icons/ai";
 import { MdFastfood } from "react-icons/md";
 import { GiCookingPot } from "react-icons/gi";
 import Spinner from "../Shared/Spinner/Spinner";
+import Recipe from "../../Single/Recipe/Recipe";
 
 const ChefDetails = () => {
 	const [recipes, setRecipes] = useState([])
@@ -13,7 +14,7 @@ const ChefDetails = () => {
 		useLoaderData();
 
 	useEffect(() => {
-		fetch(`http://localhost:5000/recipes/${id}`)
+		fetch(`https://chef-recipe-hunter-server-side-nowrin2023-gmailcom.vercel.app/recipes/${id}`)
 			.then((res) => res.json())
 			.then((data) => setRecipes(data));
 	}, [id]);
@@ -58,8 +59,8 @@ const ChefDetails = () => {
 			{/* Recipe */}
 			<div className='bg-neutral-100 rounded-b-lg gap-8 p-8 pb-16 items-center justify-center'>
 				{recipes.map((recipe) => (
-					<div key={recipe.id}>
-						<div className='mx-auto grid grid-cols-6 justify-center items-center border-solid border-2 border-neutral-950 rounded-xl overflow-hidden mb-5'>
+					<Recipe key={recipe.id} {...recipe}>
+						{/* <div className='mx-auto grid grid-cols-6 justify-center items-center border-solid border-2 border-neutral-950 rounded-xl overflow-hidden mb-5'>
 							<div className='col-span-2 flex justify-center'>
 								<img className="w-60" src={recipe.image} alt='' />
 							</div>
@@ -71,17 +72,17 @@ const ChefDetails = () => {
                                    <span className="text-yellow-300">Ingredients :</span> {recipe.ingredients[0]}, {recipe.ingredients[1]}, {recipe.ingredients[2]}, {recipe.ingredients[3]}, {recipe.ingredients[4]}
                                 </div>
                                 <div className="mb-2">
-                                <span className="text-yellow-300">Cooking Method:</span>{recipe.cooking_method}
+                                <span className="text-yellow-300">Cooking Method: </span>{recipe.cooking_method}
                                 </div>
                                 <div className="mb-2"><span className="text-yellow-300">Ratings:</span> {recipe.ratings}</div>
                                 <div className="h-10">
-                                <button className='bg-red-300 px-5 py-2 font-bold text-black rounded-lg hover:bg-red-600 ease-in-out duration-300'>
+                                <button className='bg-red-300 px-5 py-2 font-bold text-black rounded-lg hover:bg-red-600 ease-in-out duration-300' >
 										Add to Favourites{" "}
 									</button>
                                 </div>
 							</div>
-						</div>
-					</div>
+						</div> */}
+					</Recipe>
 				))}
 			</div>
 		</div>
