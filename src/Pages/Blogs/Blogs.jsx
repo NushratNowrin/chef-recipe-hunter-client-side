@@ -11,12 +11,12 @@ const Blogs = () => {
 	}
 	
 	return (
-		<div className='bg-red-700 p-10 my-10'>
+		<div className='bg-black p-10 my-10'>
 			<h2 className='text-3xl font-semibold text-white text-center'>
 				Some Important Questions
 			</h2>
 			<div className='bg-red-200 md:mx-36 mx-4 my-8 rounded-lg'>
-				<h3 className='text-xl font-semibold border-b-8 border-red-700 p-10'>
+				<h3 className='text-xl font-semibold border-b-8 border-black p-10'>
 					1. What are the differences between uncontrolled and controlled
 					components?
 				</h3>
@@ -32,7 +32,7 @@ const Blogs = () => {
 				</p>
 			</div>
 			<div className='bg-red-200 md:mx-36 mx-4 my-8 rounded-lg'>
-				<h3 className='text-xl font-semibold border-b-8 border-red-700 p-10'>
+				<h3 className='text-xl font-semibold border-b-8 border-black p-10'>
 					2. How to validate React props using PropTypes?
 				</h3>
 				<p className='text-base font-medium p-10'>
@@ -71,7 +71,7 @@ const Blogs = () => {
 				</p>
 			</div>
 			<div className='bg-red-200 md:mx-36 mx-4 my-8 rounded-lg'>
-				<h3 className='text-xl font-semibold border-b-8 border-red-700 p-10'>
+				<h3 className='text-xl font-semibold border-b-8 border-black p-10'>
 					3. What are the differences between nodejs and expressjs?
 				</h3>
 				<p className='text-base font-medium p-10'>
@@ -82,7 +82,7 @@ const Blogs = () => {
 				</p>
 			</div>
 			<div className='bg-red-200 md:mx-36 mx-4 my-8 rounded-lg'>
-				<h3 className='text-xl font-semibold border-b-8 border-red-700 p-10'>
+				<h3 className='text-xl font-semibold border-b-8 border-black p-10'>
 					4. What is a custom hook, and why will you create a custom hook?
 				</h3>
 				<p className='text-base font-medium p-10'>

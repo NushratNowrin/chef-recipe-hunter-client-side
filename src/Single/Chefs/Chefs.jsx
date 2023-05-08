@@ -20,10 +20,10 @@ const Chefs = () => {
 
 	return (
 		<div className='my-10'>
-			<h2 className='bg-red-700 text-white py-5 font-semibold text-2xl text-center tracking-wide rounded-t-lg'>
+			<h2 className='bg-black text-yellow-400 py-5 font-semibold text-2xl text-center tracking-wide rounded-t-lg'>
 				All chefs are here
 			</h2>
-			<div className='bg-neutral-100 rounded-b-lg grid grid-cols-3 gap-8 p-8 pb-16 items-center justify-center'>
+			<div className='bg-neutral-100 rounded-b-lg grid md:grid-cols-3 gap-8 p-8 pb-16 items-center justify-center'>
 				{chefs.map((chef) => (
 					<div
 						key={chef.id}

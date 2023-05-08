@@ -11,7 +11,7 @@ const Footer = () => {
         <div>
            
             <div className='bg-black bg-opacity-95 px-5 md:px-48 py-20 text-white text-center'>
-            <h2 className="text-yellow-400 mb-8 text-2xl font-bold tracking-wide">Deshi Delights</h2>
+            <h2 className="text-red-300 mb-8 text-2xl font-bold tracking-wide">Deshi Delights</h2>
             <p className='font-semibold mb-10'>Discover the taste of our passion for food. Every dish we serve is created with love and passion for the art of cooking.</p>
             
             <div className='flex justify-center items-center gap-5 text-lg h-20 tracking-wide'>
