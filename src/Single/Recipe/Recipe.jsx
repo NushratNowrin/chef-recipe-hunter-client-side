@@ -3,8 +3,13 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 const Recipe = (recipe) => {
 	const [fold, setFold] = useState(true);
+	const [favourite, setFavourite] = useState(false);
 	const { name, image, ingredients, cooking_method, ratings } = recipe;
-	console.log(recipe);
+	// console.log(recipe);
+
+	const handleFavBtn = () => {
+		setFavourite(true);
+	};
 
 	const notify = () => toast("Added to Favourite");
 
@@ -44,10 +49,21 @@ const Recipe = (recipe) => {
 					<div className='mb-2'>
 						<span className='text-yellow-300'>Ratings:</span> {ratings}
 					</div>
-					<div className='h-10'>
-						<button onClick={notify} className='bg-red-300 px-5 py-2 font-bold text-black rounded-lg hover:bg-red-600 ease-in-out duration-300'>
-							Add to Favourites
-						</button>
+					<div onClick={notify} className='h-10'>
+						{favourite ? (
+							<button
+								className='px-5 py-2 font-bold rounded-lg bg-white text-slate-500'
+								disabled>
+								Add to Favourites
+							</button>
+						) : (
+							<button
+								onClick={handleFavBtn}
+								className='bg-red-300 px-5 py-2 font-bold text-black rounded-lg hover:bg-red-600 ease-in-out duration-300'>
+								Add to Favourites
+							</button>
+						)}
+
 						<ToastContainer />
 					</div>
 				</div>

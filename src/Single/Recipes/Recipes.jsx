@@ -1,11 +1,11 @@
 import React from 'react';
 
-const PrivateRoutes = () => {
+const Recipes = () => {
     return (
         <div>
-            
+            This is Recipes page
         </div>
     );
 };
 
-export default PrivateRoutes;
+export default Recipes;

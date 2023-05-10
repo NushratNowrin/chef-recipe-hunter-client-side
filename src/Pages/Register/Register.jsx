@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import {
 	createUserWithEmailAndPassword,
-	getAuth,
-	sendEmailVerification,
+	getAuth
 } from "firebase/auth";
 import app from "../../Firebase/firebase.config";
 import { Link } from "react-router-dom";
 import "./Register.css";
 import { EyeIcon, EyeSlashIcon } from "@heroicons/react/24/solid";
+import { useContext } from "react";
+import { AuthContext } from "../../Provider/AuthProviders";
 
 const Register = () => {
 	const [showError, setShowError] = useState("");
@@ -15,6 +16,9 @@ const Register = () => {
 	const [passwordType, setPasswordType] = useState("password");
 	const [passwordInput, setPasswordInput] = useState("");
 	const auth = getAuth(app);
+
+	const {user} = useContext(AuthContext)
+	console.log(user)
 
 	const togglePassword = () => {
 		if (passwordType === "password") {

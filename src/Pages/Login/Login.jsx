@@ -15,7 +15,6 @@ import "./Login.css";
 import Spinner from "../Shared/Spinner/Spinner";
 
 const Login = () => {
-
 	const [loginUser, setLoginUser] = useState(null);
 	const [showError, setShowError] = useState("");
 	const [success, setSuccess] = useState("");
@@ -25,10 +24,9 @@ const Login = () => {
 	const navigation = useNavigation();
 
 	// Spinner
-	if(navigation.state === 'loading'){
-		return <Spinner></Spinner>
+	if (navigation.state === "loading") {
+		return <Spinner></Spinner>;
 	}
-
 
 	const auth = getAuth(app);
 	const googleProvider = new GoogleAuthProvider();
@@ -153,49 +151,62 @@ const Login = () => {
 
 	return (
 		<div className='w-50 p-10 bg-slate-300 text-center'>
-			<div className="email-pass bg-red-700 w-80 m-auto p-16 rounded mb-10">
-            <form onSubmit={getLoginData} className='login "text-white'>
-				{/* <label className="text-white font-semibold text-lg">Enter Email address</label>
+			<div className='email-pass bg-red-700 w-80 m-auto p-16 rounded mb-10'>
+				<form onSubmit={getLoginData} className='login "text-white'>
+					{/* <label className="text-white font-semibold text-lg">Enter Email address</label>
 				<br /> */}
-				<input className="py-1 px-3 w-full rounded my-2" type='email' name='email' id='email'
-                placeholder='Enter Email Address' ref={emailRef} required />
-				<br />
-				{/* <label className="text-white font-semibold text-lg">Enter password</label>
+					<input
+						className='py-1 px-3 w-full rounded my-2'
+						type='email'
+						name='email'
+						id='email'
+						placeholder='Enter Email Address'
+						ref={emailRef}
+						required
+					/>
+					<br />
+					{/* <label className="text-white font-semibold text-lg">Enter password</label>
 				<br /> */}
-				<div className="flex items-center justify-center">
-                <input
-                className="py-1 px-3 w-full rounded-l my-2"
-					type={passwordType}
-					onChange={handlePasswordChange}
-					value={passwordInput}
-					name='password'
-					id='password'
-					placeholder='Enter Password'
-					required
-				/>
-				<span onClick={togglePassword}>
-					{passwordType === "password" ? (
-						<EyeIcon className="eyeIcon bg-white"  />
-					) : (
-						<EyeSlashIcon className='eyeIcon bg-white' />
-					)}
-				</span>
-                </div>
+					<div className='flex items-center justify-center'>
+						<input
+							className='py-1 px-3 w-full rounded-l my-2'
+							type={passwordType}
+							onChange={handlePasswordChange}
+							value={passwordInput}
+							name='password'
+							id='password'
+							placeholder='Enter Password'
+							required
+						/>
+						<span onClick={togglePassword}>
+							{passwordType === "password" ? (
+								<EyeIcon className='eyeIcon bg-white' />
+							) : (
+								<EyeSlashIcon className='eyeIcon bg-white' />
+							)}
+						</span>
+					</div>
 
-				<br />
-				<div className="text-yellow-300 font-bold">{showError}</div>
-				<div className="text-green-500">{success}</div>
-				<input type='submit' value='Login' className="bg-white mb-5 px-3 py-2 rounded font-semibold"/>
-			</form>
+					<br />
+					<div className='text-yellow-300 font-bold'>{showError}</div>
+					<div className='text-green-500'>{success}</div>
+					<input
+						type='submit'
+						value='Login'
+						className='bg-white mb-5 px-3 py-2 rounded font-semibold'
+					/>
+				</form>
 
-			<p>
-				<small className="text-white font-semibold">
-					Forgot password? Please{" "}
-					<button className="text-yellow-300" onClick={forgetPassword}>Reset Password</button>
-				</small>
-			</p>
-            </div>
-            <div className="text-xl font-bold ">Or</div>
+				<p>
+					<small className='text-white font-semibold'>
+						Forgot password? Please{" "}
+						<button className='text-yellow-300' onClick={forgetPassword}>
+							Reset Password
+						</button>
+					</small>
+				</p>
+			</div>
+			<div className='text-xl font-bold '>Or</div>
 			<div>
 				<button
 					className='px-6 py-3 bg-red-700 rounded text-white font-semibold hover:bg-red-900 my-2'
@@ -209,8 +220,12 @@ const Login = () => {
 					Sign in with Github
 				</button>
 			</div>
-			<div className="m-5">
-				New to this site? please <Link to='../register' className="font-semibold text-red-700">Register</Link> First
+			<div className='m-5'>
+				New to this site? please{" "}
+				<Link to='../register' className='font-semibold text-red-700'>
+					Register
+				</Link>{" "}
+				First
 			</div>
 
 			{loginUser && (
