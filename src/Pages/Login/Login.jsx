@@ -13,6 +13,8 @@ import { Link, useNavigation } from "react-router-dom";
 import { EyeIcon, EyeSlashIcon } from "@heroicons/react/24/solid";
 import "./Login.css";
 import Spinner from "../Shared/Spinner/Spinner";
+import { useContext } from "react";
+import { AuthContext } from "../../Provider/AuthProviders";
 
 const Login = () => {
 	const [loginUser, setLoginUser] = useState(null);
@@ -22,13 +24,13 @@ const Login = () => {
 	const [passwordType, setPasswordType] = useState("password");
 	const [passwordInput, setPasswordInput] = useState("");
 	const navigation = useNavigation();
+	const {login} = useContext(AuthContext)
 
 	// Spinner
 	if (navigation.state === "loading") {
 		return <Spinner></Spinner>;
 	}
 
-	const auth = getAuth(app);
 	const googleProvider = new GoogleAuthProvider();
 	const gitHubProvider = new GithubAuthProvider();
 
@@ -49,14 +51,12 @@ const Login = () => {
 		setShowError("");
 		const email = event.target.email.value;
 		const password = event.target.password.value;
-		console.log(`
-        Email: ${email}
-        Password: ${password}
-        `);
-		signInWithEmailAndPassword(auth, email, password)
+	
+		login(email, password)
 			.then((userCredential) => {
 				// Signed in
-				const user = userCredential.user;
+				const loggeduser = userCredential.user;
+				console.log(loggeduser)
 				setShowError("");
 				event.target.reset();
 				// ...

@@ -1,8 +1,5 @@
 import React, { useState } from "react";
-import {
-	createUserWithEmailAndPassword,
-	getAuth
-} from "firebase/auth";
+import { getAuth } from "firebase/auth";
 import app from "../../Firebase/firebase.config";
 import { Link } from "react-router-dom";
 import "./Register.css";
@@ -15,10 +12,8 @@ const Register = () => {
 	const [success, setSuccess] = useState("");
 	const [passwordType, setPasswordType] = useState("password");
 	const [passwordInput, setPasswordInput] = useState("");
-	const auth = getAuth(app);
 
-	const {user} = useContext(AuthContext)
-	console.log(user)
+	const { user, createUser } = useContext(AuthContext);
 
 	const togglePassword = () => {
 		if (passwordType === "password") {
@@ -38,27 +33,21 @@ const Register = () => {
 		const email = event.target.email.value;
 		const password = event.target.password.value;
 		const photo = event.target.photo.value;
-		console.log(`
-        Name: ${name}
-        Email: ${email}
-        Password: ${password}
-        Photo: ${photo}
-        `);
 
-		if (!/.{6}/.test(password)) {
-			setShowError("Password need at least 6 character");
-			return;
-		}
+		// console.log(
+		// 	`email: ${email}
+		// 	password: ${password}`
+		// )
 
 		//create fireBase Auth
-		createUserWithEmailAndPassword(auth, email, password)
-			.then((userCredential) => {
-				// Signed in
-				const user = userCredential.user;
+		createUser(email, password)
+		.then(result => {
+			// Signed in 
+			const loggeduser = result.user;
+				console.log(loggeduser)
 				setShowError("");
-				event.target.reset();
 				setSuccess("User Has been created successfully");
-				// ...
+				event.target.reset();
 			})
 			.catch((error) => {
 				const errorCode = error.code;
@@ -66,6 +55,13 @@ const Register = () => {
 				console.log(errorMessage);
 				setShowError(errorMessage);
 			});
+
+		// Password validation
+
+		if (!/.{6}/.test(password)) {
+			setShowError("Password need at least 6 character");
+			return;
+		}
 	};
 
 	return (
@@ -110,7 +106,7 @@ const Register = () => {
 							)}
 						</span>
 					</div>
-					
+
 					<input
 						type='text'
 						name='photo'
@@ -118,14 +114,20 @@ const Register = () => {
 						placeholder='Insert your Photo URL'
 						className='py-1 px-3 rounded my-2'
 					/>
-                    <div className="text-yellow-300 font-bold">{showError}</div>
-				<div className="text-green-400 font-semibold">{success}</div>
-				<input type='submit' value='Register' className="bg-white mt-2 mb-5 px-3 py-2 rounded font-semibold"/>
-					
+					<div className='text-yellow-300 font-bold'>{showError}</div>
+					<div className='text-green-400 font-semibold'>{success}</div>
+					<div>
+						<button className='bg-white mt-2 mb-5 px-3 py-2 rounded font-semibold'>
+							Register
+						</button>
+					</div>
 				</form>
 
-				<div className="text-white">
-					Already have an account? Please <Link to='../login' className="font-semibold text-yellow-300">Login</Link>{" "}
+				<div className='text-white'>
+					Already have an account? Please{" "}
+					<Link to='../login' className='font-semibold text-yellow-300'>
+						Login
+					</Link>{" "}
 				</div>
 			</div>
 		</div>
