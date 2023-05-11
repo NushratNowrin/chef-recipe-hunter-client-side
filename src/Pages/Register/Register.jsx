@@ -13,7 +13,7 @@ const Register = () => {
 	const [passwordType, setPasswordType] = useState("password");
 	const [passwordInput, setPasswordInput] = useState("");
 
-	const { user, createUser } = useContext(AuthContext);
+	const { createUser } = useContext(AuthContext);
 
 	const togglePassword = () => {
 		if (passwordType === "password") {
@@ -34,10 +34,10 @@ const Register = () => {
 		const password = event.target.password.value;
 		const photo = event.target.photo.value;
 
-		// console.log(
-		// 	`email: ${email}
-		// 	password: ${password}`
-		// )
+		console.log(
+			`email: ${email}
+			password: ${password}`
+		)
 
 		//create fireBase Auth
 		createUser(email, password)

@@ -31,6 +31,8 @@ const Login = () => {
 		return <Spinner></Spinner>;
 	}
 
+	const auth = getAuth(app);
+
 	const googleProvider = new GoogleAuthProvider();
 	const gitHubProvider = new GithubAuthProvider();
 
