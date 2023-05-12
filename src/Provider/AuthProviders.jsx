@@ -14,6 +14,7 @@ const auth = getAuth(app);
 // eslint-disable-next-line react/prop-types
 const AuthProviders = ({children}) => {
     const [user, setUser] = useState(null)
+    const [loading, setLoading] = useState(true);
     const createUser =( email, password) =>{
         return createUserWithEmailAndPassword(auth, email, password)
     }
@@ -29,6 +30,7 @@ const AuthProviders = ({children}) => {
         const unsubscribe = onAuthStateChanged(auth, currentUser => {
             console.log('auth changed', currentUser)
             setUser(currentUser);
+            setLoading(false)
         });
 
         return ()=>{
@@ -38,6 +40,7 @@ const AuthProviders = ({children}) => {
 
     const authInfo ={
         user,
+        loading,
         createUser,
         login,
         logout

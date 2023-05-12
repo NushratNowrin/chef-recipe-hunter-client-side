@@ -48,6 +48,9 @@ const Header = () => {
 					<li className='mx-10 font-semibold'>
 						<ActiveLink to='/blogs'>Blogs</ActiveLink>
 					</li>
+					<li className='mx-10 font-semibold'>
+						<ActiveLink to='/recipes'>Recipes</ActiveLink>
+					</li>
 				</ul>
 				<div className='h-10 w-28'>			
 					{user ? (

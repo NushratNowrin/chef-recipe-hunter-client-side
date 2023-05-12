@@ -40,7 +40,8 @@ const router = createBrowserRouter([
 			},
 			{
 				path: "/recipes",
-				element: <PrivateRoutes><Recipes></Recipes></PrivateRoutes>
+				element: <PrivateRoutes><Recipes></Recipes></PrivateRoutes>,
+				// loader: () => fetch('https://chef-recipe-hunter-server-side-nowrin2023-gmailcom.vercel.app/recipes'),
 			},
 			{
 				path: "*",
