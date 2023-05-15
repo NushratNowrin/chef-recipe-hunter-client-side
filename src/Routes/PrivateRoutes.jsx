@@ -2,8 +2,6 @@ import React, { useContext } from 'react';
 import { AuthContext } from '../Provider/AuthProviders';
 import { Navigate, useLocation, useNavigation } from 'react-router-dom';
 import Spinner from '../Pages/Shared/Spinner/Spinner';
-import { useLayoutEffect } from 'react';
-
 
 
 // eslint-disable-next-line react/prop-types

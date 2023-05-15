@@ -5,13 +5,15 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 
+// console.log("Environment Variable", import.meta.env.VITE_apiKey)
+
 const firebaseConfig = {
-  apiKey: "AIzaSyD-7WE8FTz1D_NP8nWeiMco1Lf8VNKfKXI",
-  authDomain: "deshi-delights.firebaseapp.com",
-  projectId: "deshi-delights",
-  storageBucket: "deshi-delights.appspot.com",
-  messagingSenderId: "880490919594",
-  appId: "1:880490919594:web:7ceabd6f3e4cedbacd02d3"
+  apiKey: import.meta.env.VITE_apiKey,
+  authDomain: import.meta.env.VITE_authDomain,
+  projectId: import.meta.env.VITE_projectId,
+  storageBucket: import.meta.env.VITE_storageBucket,
+  messagingSenderId: import.meta.env.VITE_messagingSenderId,
+  appId: import.meta.env.VITE_appId
 };
 
 // Initialize Firebase

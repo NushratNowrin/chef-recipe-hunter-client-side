@@ -1,7 +1,12 @@
 import React, { useRef, useState } from "react";
 import { getAuth, sendPasswordResetEmail } from "firebase/auth";
 import app from "../../Firebase/firebase.config";
-import { Link, useLocation, useNavigate, useNavigation } from "react-router-dom";
+import {
+	Link,
+	useLocation,
+	useNavigate,
+	useNavigation,
+} from "react-router-dom";
 import { EyeIcon, EyeSlashIcon } from "@heroicons/react/24/solid";
 import "./Login.css";
 import Spinner from "../Shared/Spinner/Spinner";
@@ -109,7 +114,8 @@ const Login = () => {
 
 	return (
 		<div className='w-50 p-10 bg-slate-300 text-center'>
-			<div className='email-pass bg-red-700 w-80 m-auto p-16 rounded mb-10'>
+			<div className='email-pass bg-black w-80 m-auto p-16 rounded-md mb-10'>
+				<h4 className='text-2xl font-bold mb-6 text-red-300'>Please Login</h4>
 				<form onSubmit={getLoginData} className='login "text-white'>
 					{/* <label className="text-white font-semibold text-lg">Enter Email address</label>
 				<br /> */}
@@ -123,8 +129,6 @@ const Login = () => {
 						required
 					/>
 					<br />
-					{/* <label className="text-white font-semibold text-lg">Enter password</label>
-				<br /> */}
 					<div className='flex items-center justify-center'>
 						<input
 							className='py-1 px-3 w-full rounded-l my-2'
@@ -148,12 +152,14 @@ const Login = () => {
 					<br />
 					<div className='text-yellow-300 font-bold'>{showError}</div>
 					<div className='text-green-500'>{success}</div>
-					<input
-						type='submit'
-						value='Login'
-						className='bg-white mb-5 px-3 py-2 rounded font-semibold'
-					/>
-				</form>
+					<div className='h-10 mx-auto'>
+						<input
+							type='submit'
+							value='Login'
+							className=' bg-red-300 px-5 py-2 font-bold text-black rounded-lg hover:bg-red-600 hover:text-lg ease-in-out duration-300'
+						/>
+					</div>
+				</form><br></br>
 
 				<p>
 					<small className='text-white font-semibold'>
@@ -167,13 +173,13 @@ const Login = () => {
 			<div className='text-xl font-bold '>Or</div>
 			<div>
 				<button
-					className='px-6 py-3 bg-red-700 rounded text-white font-semibold hover:bg-red-900 my-2'
+					className='px-12 py-4 bg-black rounded-md text-red-300 font-semibold hover:text-red-500 my-2'
 					onClick={loginWithGoogle}>
 					Sign in with Google
 				</button>
 				<br></br>
 				<button
-					className='px-6 py-3 bg-red-700 rounded text-white font-semibold hover:bg-red-900 my-2'
+					className='px-12 py-4 bg-black rounded-md text-red-300 font-semibold hover:text-red-500 my-2'
 					onClick={loginWithGithub}>
 					Sign in with Github
 				</button>

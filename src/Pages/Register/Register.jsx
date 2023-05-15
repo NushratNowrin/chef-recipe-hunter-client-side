@@ -64,8 +64,8 @@ const Register = () => {
 
 	return (
 		<div className='w-50 p-10 bg-slate-300 text-center'>
-			<div className='bg-red-700 w-8/12 m-auto py-16 px-20 rounded mb-10'>
-				<h4 className='text-2xl font-bold mb-6'>Please Register</h4>
+			<div className='bg-black w-8/12 m-auto py-16 px-20 rounded mb-10'>
+				<h4 className='text-2xl font-bold mb-6 text-red-300'>Please Register</h4>
 				<form onSubmit={getFormData}>
 					<input
 						type='text'
@@ -113,13 +113,15 @@ const Register = () => {
 						className='py-1 px-3 rounded my-2'
 					/>
 					<div className='text-yellow-300 font-bold'>{showError}</div>
-					<div className='text-green-400 font-semibold'>{success}</div>
-					<div>
-						<button className='bg-white mt-2 mb-5 px-3 py-2 rounded font-semibold'>
-							Register
-						</button>
+					<div className='text-green-400 font-semibold'>{success}</div><br></br>
+					<div className=' h-10 mx-auto'>
+						<input
+							type='submit'
+							value='Register'
+							className=' bg-red-300 px-5 py-2 font-bold text-black rounded-lg hover:bg-red-600 hover:text-lg ease-in-out duration-300'
+						/>
 					</div>
-				</form>
+				</form><br></br>
 
 				<div className='text-white'>
 					Already have an account? Please{" "}
