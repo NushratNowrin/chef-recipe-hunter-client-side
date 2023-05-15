@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import { getAuth } from "firebase/auth";
-import app from "../../Firebase/firebase.config";
 import { Link } from "react-router-dom";
 import "./Register.css";
 import { EyeIcon, EyeSlashIcon } from "@heroicons/react/24/solid";
@@ -32,7 +30,7 @@ const Register = () => {
 		const name = event.target.name.value;
 		const email = event.target.email.value;
 		const password = event.target.password.value;
-		const photo = event.target.photo.value;
+		const photoURL = event.target.photo.value;
 
 		console.log(
 			`email: ${email}
@@ -109,8 +107,8 @@ const Register = () => {
 
 					<input
 						type='text'
-						name='photo'
-						id='photo'
+						name='photoURL'
+						id='photoURL'
 						placeholder='Insert your Photo URL'
 						className='py-1 px-3 rounded my-2'
 					/>

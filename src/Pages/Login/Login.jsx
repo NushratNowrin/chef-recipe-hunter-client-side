@@ -1,15 +1,7 @@
 import React, { useRef, useState } from "react";
-import {
-	GithubAuthProvider,
-	GoogleAuthProvider,
-	getAuth,
-	sendPasswordResetEmail,
-	signInWithEmailAndPassword,
-	signInWithPopup,
-	signOut,
-} from "firebase/auth";
+import { getAuth, sendPasswordResetEmail } from "firebase/auth";
 import app from "../../Firebase/firebase.config";
-import { Link, useNavigation } from "react-router-dom";
+import { Link, useLocation, useNavigate, useNavigation } from "react-router-dom";
 import { EyeIcon, EyeSlashIcon } from "@heroicons/react/24/solid";
 import "./Login.css";
 import Spinner from "../Shared/Spinner/Spinner";
@@ -24,7 +16,11 @@ const Login = () => {
 	const [passwordType, setPasswordType] = useState("password");
 	const [passwordInput, setPasswordInput] = useState("");
 	const navigation = useNavigation();
-	const {login} = useContext(AuthContext)
+	const navigate = useNavigate();
+	const location = useLocation();
+	const { login, signInWithGoogle, signInWithGithub } = useContext(AuthContext);
+
+	const from = location.state?.from?.pathname || "/";
 
 	// Spinner
 	if (navigation.state === "loading") {
@@ -33,11 +29,8 @@ const Login = () => {
 
 	const auth = getAuth(app);
 
-	const googleProvider = new GoogleAuthProvider();
-	const gitHubProvider = new GithubAuthProvider();
-
-	const handlePasswordChange = (evnt) => {
-		setPasswordInput(evnt.target.value);
+	const handlePasswordChange = (event) => {
+		setPasswordInput(event.target.value);
 	};
 	const togglePassword = () => {
 		if (passwordType === "password") {
@@ -53,18 +46,18 @@ const Login = () => {
 		setShowError("");
 		const email = event.target.email.value;
 		const password = event.target.password.value;
-	
+
 		login(email, password)
 			.then((userCredential) => {
 				// Signed in
 				const loggeduser = userCredential.user;
-				console.log(loggeduser)
+				console.log(loggeduser);
 				setShowError("");
 				event.target.reset();
-				// ...
+				// navigate
+				navigate(from, { replace: true });
 			})
 			.catch((error) => {
-				const errorCode = error.code;
 				const errorMessage = error.message;
 				setShowError(errorMessage);
 			});
@@ -85,68 +78,31 @@ const Login = () => {
 			});
 	};
 
-	const signIn = () => {
-		signInWithPopup(auth, googleProvider)
+	const loginWithGoogle = () => {
+		signInWithGoogle()
 			.then((result) => {
-				// This gives you a Google Access Token. You can use it to access the Google API.
-				const credential = GoogleAuthProvider.credentialFromResult(result);
-				const token = credential.accessToken;
-				// The signed-in user info.
 				const user = result.user;
-				console.log(user);
 				setLoginUser(user);
-				// IdP data available using getAdditionalUserInfo(result)
-				// ...
+				// navigate
+				navigate(from, { replace: true });
 			})
 			.catch((error) => {
-				// Handle Errors here.
-				const errorCode = error.code;
 				const errorMessage = error.message;
-				console.log("error", errorMessage);
-				// The email of the user's account used.
-				const email = error.customData.email;
-				// The AuthCredential type that was used.
-				const credential = GoogleAuthProvider.credentialFromError(error);
-				// ...
+				setShowError(errorMessage);
 			});
 	};
 
-	// const signout = () => {
-	// 	const auth = getAuth();
-	// 	signOut(auth)
-	// 		.then((result) => {
-	// 			// Sign-out successful.
-	// 			console.log(result);
-	// 			setLoginUser(null);
-	// 		})
-	// 		.catch((error) => {
-	// 			console.log(error);
-	// 		});
-	// };
-
-	const githubSignIn = () => {
-		signInWithPopup(auth, gitHubProvider)
+	const loginWithGithub = () => {
+		signInWithGithub()
 			.then((result) => {
-				// This gives you a Google Access Token. You can use it to access the Google API.
-				const credential = GoogleAuthProvider.credentialFromResult(result);
-				const token = credential.accessToken;
-				// The signed-in user info.
 				const user = result.user;
-				console.log(user);
 				setLoginUser(user);
-				// IdP data available using getAdditionalUserInfo(result)
-				// ...
+				// navigate
+				navigate(from, { replace: true });
 			})
 			.catch((error) => {
-				// Handle Errors here.
-				const errorCode = error.code;
 				const errorMessage = error.message;
-				console.log("error", errorMessage);
-				// The email of the user's account used.
-				const email = error.customData.email;
-				// The AuthCredential type that was used.
-				const credential = GoogleAuthProvider.credentialFromError(error);
-				// ...
+				setShowError(errorMessage);
 			});
 		console.log(loginUser);
 	};
@@ -212,13 +168,13 @@ const Login = () => {
 			<div>
 				<button
 					className='px-6 py-3 bg-red-700 rounded text-white font-semibold hover:bg-red-900 my-2'
-					onClick={signIn}>
+					onClick={loginWithGoogle}>
 					Sign in with Google
 				</button>
 				<br></br>
 				<button
 					className='px-6 py-3 bg-red-700 rounded text-white font-semibold hover:bg-red-900 my-2'
-					onClick={githubSignIn}>
+					onClick={loginWithGithub}>
 					Sign in with Github
 				</button>
 			</div>
@@ -229,12 +185,6 @@ const Login = () => {
 				</Link>{" "}
 				First
 			</div>
-
-			{loginUser && (
-				<div>
-					<img src={loginUser.photoURL} alt='' />
-				</div>
-			)}
 		</div>
 	);
 };
