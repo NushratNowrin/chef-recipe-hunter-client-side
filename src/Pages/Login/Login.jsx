@@ -117,8 +117,6 @@ const Login = () => {
 			<div className='email-pass bg-black w-80 m-auto p-16 rounded-md mb-10'>
 				<h4 className='text-2xl font-bold mb-6 text-red-300'>Please Login</h4>
 				<form onSubmit={getLoginData} className='login "text-white'>
-					{/* <label className="text-white font-semibold text-lg">Enter Email address</label>
-				<br /> */}
 					<input
 						className='py-1 px-3 w-full rounded my-2'
 						type='email'

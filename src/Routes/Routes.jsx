@@ -32,7 +32,7 @@ const router = createBrowserRouter([
 			},
 			{
 				path: "/chef/:id",
-				element: <ChefDetails></ChefDetails>,
+				element: <PrivateRoutes><ChefDetails></ChefDetails></PrivateRoutes>,
 				loader: ({ params }) =>
 					fetch(
 						`https://chef-recipe-hunter-server-side-nowrin2023-gmailcom.vercel.app/chefs/${params.id}`

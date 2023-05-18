@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import LazyLoad from "react-lazy-load";
 import { AiFillLike } from "react-icons/ai";
 import { MdFastfood } from "react-icons/md";
 import { GiCookingPot } from "react-icons/gi";
@@ -8,7 +9,9 @@ import Spinner from "../../Pages/Shared/Spinner/Spinner";
 const Chefs = () => {
 	const [chefs, setChefs] = useState([]);
 	useEffect(() => {
-		fetch("https://chef-recipe-hunter-server-side-nowrin2023-gmailcom.vercel.app/chefs")
+		fetch(
+			"https://chef-recipe-hunter-server-side-nowrin2023-gmailcom.vercel.app/chefs"
+		)
 			.then((res) => res.json())
 			.then((data) => setChefs(data));
 	}, []);
@@ -29,7 +32,9 @@ const Chefs = () => {
 						key={chef.id}
 						className='mx-auto border-solid border-2 border-neutral-950 rounded-3xl overflow-hidden shadow-lg  shadow-neutral-950/50'>
 						<div className='flex justify-center'>
+							<LazyLoad className='h-60' offset={300} threshold={0.95}>
 							<img className='h-60' src={chef.image} alt='' />
+							</LazyLoad>
 						</div>
 						<div className='bg-neutral-950 text-white p-10 w-72 text-center'>
 							<p className='text-lg font-semibold tracking-wide mb-2 text-red-300'>

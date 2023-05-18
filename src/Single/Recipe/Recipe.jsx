@@ -28,7 +28,7 @@ const Recipe = (recipe) => {
 						{ingredients[0]}, {ingredients[1]}, {ingredients[2]},{" "}
 						{ingredients[3]}, {ingredients[4]}
 					</div>
-					<span className='text-yellow-300'>Cooking Method: </span>
+					<div className='text-yellow-300'>Cooking Method: </div>
 					{fold ? (
 						<>
 							<div className='mb-2'>
@@ -40,10 +40,12 @@ const Recipe = (recipe) => {
 						</>
 					) : (
 						<>
-							<span>{cooking_method}</span>
-							<span className='text-red-400' onClick={() => setFold(!fold)}>
-								Read Less
-							</span>
+							<div className='mb-2'>
+								<span>{cooking_method}</span>
+								<span className='text-red-400' onClick={() => setFold(!fold)}>
+									Read Less
+								</span>
+							</div>
 						</>
 					)}
 					<div className='mb-2'>
