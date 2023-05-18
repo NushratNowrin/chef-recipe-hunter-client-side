@@ -64,7 +64,7 @@ const Register = () => {
 
 	return (
 		<div className='w-50 p-10 bg-slate-300 text-center'>
-			<div className='bg-black w-8/12 m-auto py-16 px-20 rounded mb-10'>
+			<div className='bg-black md:w-8/12 m-auto py-16 md:px-20 rounded mb-10'>
 				<h4 className='text-2xl font-bold mb-6 text-red-300'>Please Register</h4>
 				<form onSubmit={getFormData}>
 					<input
@@ -94,7 +94,7 @@ const Register = () => {
 							id='password'
 							placeholder='Enter Password'
 							required
-							className='py-1 w-2/5 px-3 rounded-l my-2'
+							className='py-1 w-3/5 md:w-2/5 px-3 rounded-l my-2'
 						/>
 						<span onClick={togglePassword}>
 							{passwordType === "password" ? (

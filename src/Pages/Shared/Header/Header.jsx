@@ -69,7 +69,7 @@ const Header = () => {
 								/>
 							)}
 
-							<div className='w-16 h-10'>
+							<div className='w-16 h-10 '>
 								<button
 									onClick={handleLogOut}
 									className=' bg-red-300 px-5 py-2 font-bold text-black rounded-lg hover:bg-red-600 hover:text-lg ease-in-out duration-300'>
@@ -78,7 +78,7 @@ const Header = () => {
 							</div>
 						</div>
 					) : (
-						<button className=' bg-red-300 px-5 py-2 font-bold text-black rounded-lg divhover:bg-red-600 hover:text-lg ease-in-out duration-300'>
+						<button className=' bg-red-300 px-5 py-2 font-bold text-black rounded-lg hover:bg-red-600 hover:text-lg ease-in-out duration-300'>
 							<ActiveLink to='/login'>Login</ActiveLink>
 						</button>
 					)}
