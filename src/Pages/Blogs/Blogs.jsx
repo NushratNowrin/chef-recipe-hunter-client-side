@@ -13,7 +13,7 @@ const Blogs = () => {
 
 	return (
 		<div ref={ref}>
-			<div className=''>
+			<div className='pt-20'>
 				<Pdf targetRef={ref} filename='Blogs.pdf'>
 					{({ toPdf }) => (
 						<button

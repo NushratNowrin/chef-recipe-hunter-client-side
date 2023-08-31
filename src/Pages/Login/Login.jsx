@@ -113,7 +113,7 @@ const Login = () => {
 	};
 
 	return (
-		<div className='w-50 p-10 bg-slate-300 text-center'>
+		<div className='w-50 p-10 bg-slate-300 text-center pt-20'>
 			<div className='email-pass bg-black md:w-80 m-auto p-16 rounded-md mb-10'>
 				<h4 className='text-2xl font-bold mb-6 text-red-300'>Please Login</h4>
 				<form onSubmit={getLoginData} className='login "text-white'>

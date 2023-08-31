@@ -5,15 +5,16 @@ import customer2 from "../../assets/customer-2.jpg";
 import customer3 from "../../assets/customer-3.jpg";
 import customer4 from "../../assets/customer-4.jpg";
 import Chefs from "../../Single/Chefs/Chefs";
+import HomeRecipes from "./HomeRecipes";
 
 const Home = () => {
 	return (
 		<div>
 			{/* Banner */}
-			<div className='banner md:h-screen flex justify-center items-center md:px-48 px-5'>
+			<div className='banner md:h-screen flex justify-center items-center md:px-48 px-5 pt-20'>
 				
 				<div className='text-white text-center md:p-20 py-10 bg-black bg-opacity-75 rounded-3xl'>
-					<h2 className='text-3xl font-bold tracking-wide '>Welcome...</h2>
+					<h2 className='text-3xl font-bold tracking-wide font-serif'>Welcome...</h2>
 					<p className='tracking-wide text-md font-semibold my-5 '>
 						From farm to table, we bring you the freshest ingredients. Our
 						commitment to locally sourced produce and meats means you get the
@@ -26,6 +27,9 @@ const Home = () => {
 					</div>
 				</div>
 			</div>
+
+			{/* Home recipe */}
+			<HomeRecipes></HomeRecipes>
 
 			{/* Chef */}
 			<Chefs></Chefs>

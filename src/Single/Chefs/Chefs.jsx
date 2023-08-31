@@ -5,6 +5,7 @@ import { MdFastfood } from "react-icons/md";
 import { GiCookingPot } from "react-icons/gi";
 import { Link, useNavigation } from "react-router-dom";
 import Spinner from "../../Pages/Shared/Spinner/Spinner";
+import { styles } from "../../Style/style";
 
 const Chefs = () => {
 	const [chefs, setChefs] = useState([]);
@@ -22,21 +23,20 @@ const Chefs = () => {
 	}
 
 	return (
-		<div className='my-10'>
-			<h2 className='bg-black text-yellow-400 py-5 font-semibold text-2xl text-center tracking-wide rounded-t-lg'>
-				All chefs are here
-			</h2>
-			<div className='bg-neutral-100 rounded-b-lg grid md:grid-cols-3 gap-5 sm:p-8 p-2 pb-16 items-center justify-center w-full'>
+		<div className='my-10 text-center bg-neutral-100 pt-20'>
+			<p className={`${styles.secondaryHeader}`}>---Search for your favoure chef?---</p>
+            <h2 className={`${styles.primaryHeader}`}>All chefs are here</h2>
+			<div className='rounded-b-lg grid items-center justify-center lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 sm:gap-20 gap-5 sm:px-16 px-2'>
 				{chefs.map((chef) => (
 					<div
 						key={chef.id}
-						className='mx-auto border-solid border-2 border-neutral-950 rounded-3xl overflow-hidden shadow-lg shadow-neutral-950/50'>
-						<div className='flex justify-center w-64'>
+						className='w-full border-solid border-2 border-neutral-950 rounded-3xl overflow-hidden shadow-lg shadow-neutral-950/50'>
+						<div className='flex justify-center w-full'>
 							<LazyLoad className='h-60' offset={300} threshold={0.95}>
 							<img className='h-60 ' src={chef.image} alt='' />
 							</LazyLoad>
 						</div>
-						<div className='bg-neutral-950 text-white sm:p-10 p-3 sm:w-72 w-f text-center'>
+						<div className='bg-neutral-950 text-white sm:p-10 p-3 w-full text-center'>
 							<p className='text-lg font-semibold tracking-wide mb-2 text-red-300'>
 								{chef.name}
 							</p>
