@@ -26,17 +26,17 @@ const Chefs = () => {
 			<h2 className='bg-black text-yellow-400 py-5 font-semibold text-2xl text-center tracking-wide rounded-t-lg'>
 				All chefs are here
 			</h2>
-			<div className='bg-neutral-100 rounded-b-lg grid md:grid-cols-3 gap-8 p-8 pb-16 items-center justify-center'>
+			<div className='bg-neutral-100 rounded-b-lg grid md:grid-cols-3 gap-5 sm:p-8 p-2 pb-16 items-center justify-center w-full'>
 				{chefs.map((chef) => (
 					<div
 						key={chef.id}
-						className='mx-auto border-solid border-2 border-neutral-950 rounded-3xl overflow-hidden shadow-lg  shadow-neutral-950/50'>
-						<div className='flex justify-center'>
+						className='mx-auto border-solid border-2 border-neutral-950 rounded-3xl overflow-hidden shadow-lg shadow-neutral-950/50'>
+						<div className='flex justify-center w-64'>
 							<LazyLoad className='h-60' offset={300} threshold={0.95}>
-							<img className='h-60' src={chef.image} alt='' />
+							<img className='h-60 ' src={chef.image} alt='' />
 							</LazyLoad>
 						</div>
-						<div className='bg-neutral-950 text-white p-10 w-72 text-center'>
+						<div className='bg-neutral-950 text-white sm:p-10 p-3 sm:w-72 w-f text-center'>
 							<p className='text-lg font-semibold tracking-wide mb-2 text-red-300'>
 								{chef.name}
 							</p>

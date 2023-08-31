@@ -3,7 +3,14 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 75vh;
+    height: 100vh;
+}
+
+.menu-item{
+    transition: color 0.3s ease-in-out;
+}
+.menu-item:hover{
+	color: #FCA5A5;
 }
 
 .discount{

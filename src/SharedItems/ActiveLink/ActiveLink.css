@@ -1,3 +1,7 @@
 .active {
-	color: yellow;
+	color: #FCA5A5;
+	border-bottom: 2px solid #FCA5A5;
+	padding-bottom: 8px;
+	padding-left: 5px;
+	padding-right: 5px;
 }

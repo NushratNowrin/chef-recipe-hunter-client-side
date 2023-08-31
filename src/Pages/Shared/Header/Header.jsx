@@ -6,6 +6,7 @@ import { getAuth, signOut } from "firebase/auth";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import { AuthContext } from "../../../Provider/AuthProviders";
 
+
 const Header = () => {
 	const [open, setOpen] = useState(false);
 	const { user, logout } = useContext(AuthContext);
@@ -19,7 +20,7 @@ const Header = () => {
 			});
 	};
 	return (
-		<div className='flex bg-black items-center md:px-20 p-5 text-white justify-between'>
+		<div className='w-full flex justify-between items-center fixed z-50 bg-black bg-opacity-75 md:px-20 p-5 text-white'>
 			<h3 className='font-bold text-xl tracking-wide text-red-300'>
 				<Link to='/'>Deshi Delights</Link>
 			</h3>
@@ -40,13 +41,13 @@ const Header = () => {
 					open ? "" : "hidden"
 				}`}>
 				<ul className='md:flex'>
-					<li className='mx-10 font-semibold'>
+					<li className='mx-10 font-semibold menu-item'>
 						<ActiveLink to='/'>Home</ActiveLink>
 					</li>
-					<li className='mx-10 font-semibold'>
+					<li className='mx-10 font-semibold menu-item'>
 						<ActiveLink to='/blogs'>Blogs</ActiveLink>
 					</li>
-					<li className='mx-10 font-semibold'>
+					<li className='mx-10 font-semibold menu-item'>
 						<ActiveLink to='/recipes'>Recipes</ActiveLink>
 					</li>
 				</ul>
@@ -78,7 +79,7 @@ const Header = () => {
 							</div>
 						</div>
 					) : (
-						<button className=' bg-red-300 px-5 py-2 font-bold text-black rounded-lg hover:bg-red-600 hover:text-lg ease-in-out duration-300'>
+						<button className='bg-red-300 px-5 py-2 font-bold text-black rounded-lg hover:bg-red-600 hover:text-lg ease-in-out duration-300'>
 							<ActiveLink to='/login'>Login</ActiveLink>
 						</button>
 					)}

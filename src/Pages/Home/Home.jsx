@@ -4,16 +4,15 @@ import customer1 from "../../assets/customer-1.jpg";
 import customer2 from "../../assets/customer-2.jpg";
 import customer3 from "../../assets/customer-3.jpg";
 import customer4 from "../../assets/customer-4.jpg";
-import "./Home.css";
 import Chefs from "../../Single/Chefs/Chefs";
 
 const Home = () => {
 	return (
 		<div>
 			{/* Banner */}
-			<div className='banner my-10 flex justify-center items-center md:px-48'>
-				<div></div>
-				<div className='text-white text-center py-12 md:px-20 px-10 bg-zinc-500 bg-opacity-50 rounded-3xl'>
+			<div className='banner md:h-screen flex justify-center items-center md:px-48 px-5'>
+				
+				<div className='text-white text-center md:p-20 py-10 bg-black bg-opacity-75 rounded-3xl'>
 					<h2 className='text-3xl font-bold tracking-wide '>Welcome...</h2>
 					<p className='tracking-wide text-md font-semibold my-5 '>
 						From farm to table, we bring you the freshest ingredients. Our
@@ -33,7 +32,7 @@ const Home = () => {
 
 			{/* Discount */}
 			<div className='discount flex justify-center items-center my-10 md:px-48'>
-				<div className=' text-center py-12 md:px-20 md:w-11/12 w-80 bg-zinc-800 bg-opacity-100 rounded-full outline-dotted outline-4 outline-offset-8'>
+				<div className=' text-center py-12 md:px-20 md:w-11/12 w-full bg-zinc-800 bg-opacity-100 rounded-full outline-dotted outline-4 outline-offset-8'>
 					<h2 className='text-amber-500 text-xl font-semibold tracking-wide'>
 						Get 25% Discount
 					</h2>
