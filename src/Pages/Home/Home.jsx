@@ -7,6 +7,7 @@ import customer4 from "../../assets/customer-4.jpg";
 import Chefs from "../../Single/Chefs/Chefs";
 import HomeRecipes from "./HomeRecipes";
 import ActiveLink from "../../SharedItems/ActiveLink/ActiveLink";
+import { styles } from "../../Style/style";
 
 const Home = () => {
 	return (
@@ -53,11 +54,10 @@ const Home = () => {
 			</div>
 
 			{/* Clients review */}
-			<div className='my-10'>
-				<h2 className='bg-black text-yellow-400 py-5 font-semibold text-2xl text-center tracking-wide rounded-t-lg'>
-					Customer&lsquo;s Review
-				</h2>
-				<div className='bg-neutral-100 rounded-b-lg grid md:grid-cols-4 gap-8 p-8 pb-16 items-center justify-center'>
+			<div className="pt-20 bg-neutral-100 ">
+			<p className={`${styles.secondaryHeader}`}>---What&lsquo;s our customer say---</p>
+            <h2 className={`${styles.primaryHeader}`}>Customer&lsquo;s Review</h2>
+				<div className='rounded-b-lg grid md:grid-cols-4 gap-8 p-8 pb-16 items-center justify-center'>
 					<div className='bg-stone-300 text-center p-5 md:m-0 mx-12 my-6 rounded-lg'>
 						<div className='h-40 overflow-hidden flex items-center  rounded-full '>
 							<img src={customer1} alt='' />
