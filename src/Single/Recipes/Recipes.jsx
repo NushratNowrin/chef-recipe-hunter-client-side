@@ -12,7 +12,7 @@ const Recipes = () => {
 	}, []);
 
 	return (
-		<div className='bg-neutral-100 rounded-b-lg gap-8 p-8 pb-16 items-center justify-center'>
+		<div className='bg-neutral-100 rounded-b-lg gap-8 p-8 pb-16 items-center justify-center pt-20'>
             {recipes.map((recipe) => (
 					<Recipe key={recipe.id} {...recipe}></Recipe>
 				))}

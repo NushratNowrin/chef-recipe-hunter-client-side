@@ -6,6 +6,7 @@ import customer3 from "../../assets/customer-3.jpg";
 import customer4 from "../../assets/customer-4.jpg";
 import Chefs from "../../Single/Chefs/Chefs";
 import HomeRecipes from "./HomeRecipes";
+import ActiveLink from "../../SharedItems/ActiveLink/ActiveLink";
 
 const Home = () => {
 	return (
@@ -35,8 +36,8 @@ const Home = () => {
 			<Chefs></Chefs>
 
 			{/* Discount */}
-			<div className='discount flex justify-center items-center my-10 md:px-48'>
-				<div className=' text-center py-12 md:px-20 md:w-11/12 w-full bg-zinc-800 bg-opacity-100 rounded-full outline-dotted outline-4 outline-offset-8'>
+			<div className='discount flex justify-center items-center h-screen md:px-48'>
+				<div className=' text-center py-12 md:px-20 w-11/12 bg-black bg-opacity-75 rounded-full outline-dotted outline-4 outline-offset-8'>
 					<h2 className='text-amber-500 text-xl font-semibold tracking-wide'>
 						Get 25% Discount
 					</h2>
@@ -45,7 +46,7 @@ const Home = () => {
 					</p>
 					<div className='h-16 flex items-center justify-center'>
 						<button className='bg-amber-600 text-white px-5 py-3 font-bold rounded-2xl tracking-wide hover:bg-amber-700 hover:text-lg ease-in-out duration-300'>
-							Show All Items
+							<ActiveLink to='/recipes'>Show All Items</ActiveLink>
 						</button>
 					</div>
 				</div>
