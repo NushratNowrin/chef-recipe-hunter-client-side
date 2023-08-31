@@ -5,7 +5,7 @@ import Login from "../../Login/Login";
 import { getAuth, signOut } from "firebase/auth";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import { AuthContext } from "../../../Provider/AuthProviders";
-
+import logo from "../../../assets/logo.png";
 
 const Header = () => {
 	const [open, setOpen] = useState(false);
@@ -16,23 +16,73 @@ const Header = () => {
 			.then((result) => {
 				// Sign-out successful.
 			})
-			.catch((error) => {
-			});
+			.catch((error) => {});
 	};
 	return (
 		<div className='w-full flex justify-between items-center fixed z-50 bg-black bg-opacity-75 md:px-20 p-5 text-white'>
 			<h3 className='font-bold text-xl tracking-wide text-red-300'>
-				<Link to='/'>Deshi Delights</Link>
+				<Link to='/'>
+					<img className='h-20' src={logo} alt='' />
+				</Link>
 			</h3>
 			{/* hambarger */}
 			<div onClick={() => setOpen(!open)} className='md:hidden'>
 				<span>
 					{open === true ? (
-						<XMarkIcon className='text-right absolute right-3 top-6 h-6 w-6 text-blue-500' />
+						<XMarkIcon className='text-right absolute right-5 top-12 h-6 w-6 text-white' />
 					) : (
-						<Bars3Icon className='h-6 w-6 text-blue-500' />
+						<Bars3Icon className='h-6 w-6 text-white' />
 					)}
 				</span>
+				<div
+					className={`${
+						!open ? "hidden" : "flex flex-col"
+					} p-6 bg-black opacity-90 absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl`}>
+					<ul className='list-none flex flex-col justify-end items-start gap-4'>
+						<li className='mx-10 font-semibold menu-item'>
+							<ActiveLink to='/'>Home</ActiveLink>
+						</li>
+						<li className='mx-10 font-semibold menu-item'>
+							<ActiveLink to='/blogs'>Blogs</ActiveLink>
+						</li>
+						<li className='mx-10 font-semibold menu-item'>
+							<ActiveLink to='/recipes'>Recipes</ActiveLink>
+						</li>
+					</ul>
+					<div className='h-10 w-28 flex justify-end mt-3'>
+						{user ? (
+							<div className='flex justify-end items-center'>
+								{user.photoURL != null ? (
+									<img
+										className='h-10 w-10 rounded-full'
+										src={user.photoURL}
+										title={user.email}
+										alt=''
+									/>
+								) : (
+									<img
+										className='h-10 w-10 rounded-full'
+										src='https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png'
+										title={user.email}
+										alt=''
+									/>
+								)}
+
+								<div className='w-16 h-10 '>
+									<button
+										onClick={handleLogOut}
+										className=' bg-red-300 px-5 py-2 font-bold text-black rounded-lg hover:bg-red-600 hover:text-lg ease-in-out duration-300'>
+										Logout
+									</button>
+								</div>
+							</div>
+						) : (
+							<button className='bg-red-300 px-5 py-2 font-bold text-black rounded-lg hover:bg-red-600 hover:text-lg ease-in-out duration-300'>
+								<Link to='/login'>Login</Link>
+							</button>
+						)}
+					</div>
+				</div>
 			</div>
 
 			{/* desktop icon */}
@@ -40,7 +90,7 @@ const Header = () => {
 				className={`md:flex justify-between items-center ${
 					open ? "" : "hidden"
 				}`}>
-				<ul className='md:flex'>
+				<ul className='md:flex hidden'>
 					<li className='mx-10 font-semibold menu-item'>
 						<ActiveLink to='/'>Home</ActiveLink>
 					</li>
@@ -51,10 +101,10 @@ const Header = () => {
 						<ActiveLink to='/recipes'>Recipes</ActiveLink>
 					</li>
 				</ul>
-				<div className='h-10 w-28'>
+				<div className='h-10 w-28 md:flex hidden'>
 					{user ? (
 						<div className='flex justify-between items-center'>
-							{(user.photoURL != null)? (
+							{user.photoURL != null ? (
 								<img
 									className='h-10 w-10 rounded-full'
 									src={user.photoURL}
@@ -80,7 +130,7 @@ const Header = () => {
 						</div>
 					) : (
 						<button className='bg-red-300 px-5 py-2 font-bold text-black rounded-lg hover:bg-red-600 hover:text-lg ease-in-out duration-300'>
-							<ActiveLink to='/login'>Login</ActiveLink>
+							<Link to='/login'>Login</Link>
 						</button>
 					)}
 				</div>
