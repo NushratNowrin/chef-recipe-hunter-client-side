@@ -24,7 +24,7 @@ const Footer = () => {
 					</div>
 				</div>
 			</div>
-			<div className='footer footer-center p-4 bg-black text-white'>
+			<div className='footer p-4 bg-black text-white text-center'>
 				<div>
 					<p>Copyright © 2023 - CulinaryCloud. All rights reserved.</p>
 				</div>

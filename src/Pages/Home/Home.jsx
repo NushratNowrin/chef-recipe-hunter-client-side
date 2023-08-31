@@ -93,7 +93,7 @@ const Home = () => {
 							<img src={customer4} alt='' />
 						</div>
 						<h3 className='py-2 font-semibold'>Mitu</h3>
-						<p className='text-stone-600 text-xs font-medium'>
+						<p className='text-stone-600 text-xs font-medium '>
 							Always trusted and qualityfull service.
 						</p>
 					</div>
