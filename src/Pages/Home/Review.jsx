@@ -22,13 +22,12 @@ const Review = () => {
 	// Swiper
 	const progressCircle = useRef(null);
 	const progressContent = useRef(null);
-
 	return (
 		<div className='my-20 '>
 			<div className='mb-10'></div>
 			<div className='grid sm:grid-cols-2 grid-cols-1 items-center justify-center gap-0 lg:mx-40'>
 				{/* Slider Review */}
-				<div className='review-1 h-[500px] flex justify-center items-center'>
+				<div className='review-1 sm:h-[500px] flex justify-center items-center sm:order-first order-last'>
 					<Swiper
 						autoplay={{
 							delay: 2500,
@@ -57,7 +56,7 @@ const Review = () => {
 					</Swiper>
 				</div>
 
-				<div className='review-2 h-[500px] flex justify-center items-center'>
+				<div className='review-2 sm:h-[500px] py-5 flex justify-center items-center'>
 					<div className='flex flex-col w-3/4 justify-center items-center bg-white bg-opacity-80 lg:p-20 p-5 rounded-3xl'>
 						<p className={`${styles.secondaryHeader} font-medium`}>
 							What&lsquo;s our customer say
@@ -68,18 +67,6 @@ const Review = () => {
 					</div>
 				</div>
 			</div>
-			{/* <div className='rounded-b-lg grid md:grid-cols-4 gap-8 p-8 pb-16 items-center justify-center'>
-					<div className='bg-stone-300 text-center p-5 md:m-0 mx-12 my-6 rounded-lg'>
-						<div className='h-40 overflow-hidden flex items-center  rounded-full '>
-							<img src={customer1} alt='' />
-						</div>
-						<h3 className='py-2 font-semibold'>Robin</h3>
-						<p className='text-stone-600 text-xs font-medium'>
-							Their behavior and delivery is soo good
-						</p>
-					</div>
-					
-				</div> */}
 		</div>
 	);
 };
