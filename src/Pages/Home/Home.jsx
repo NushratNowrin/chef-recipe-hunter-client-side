@@ -11,9 +11,9 @@ const Home = () => {
 	return (
 		<div>
 			{/* Banner */}
-			<div className='banner md:h-screen flex justify-center items-center md:px-48 px-5 pt-20'>
+			<div className='banner flex justify-center items-center md:py-32 md:px-48 xs:p-16 p-10 md:pt-40 pt-40'>
 				
-				<div className='text-white text-center md:p-20 py-10 bg-black bg-opacity-75 rounded-3xl'>
+				<div className='text-white text-center md:p-20 p-10 bg-black bg-opacity-75 rounded-3xl'>
 					<h2 className='text-3xl font-bold tracking-wide font-serif'>Welcome...</h2>
 					<p className='tracking-wide text-md font-semibold my-5 '>
 						From farm to table, we bring you the freshest ingredients. Our
@@ -35,8 +35,8 @@ const Home = () => {
 			<Chefs></Chefs>
 
 			{/* Discount */}
-			<div className='discount flex justify-center items-center h-screen md:px-48'>
-				<div className=' text-center py-12 md:px-20 w-11/12 bg-black bg-opacity-75 rounded-full outline-dotted outline-4 outline-offset-8'>
+			<div className='discount flex justify-center items-center md:px-48 md:py-32 py-20 px-2'>
+				<div className=' text-center py-12 md:px-20 xs:px-10 px-5  w-11/12 bg-black bg-opacity-75 rounded-full outline-dotted outline-4 outline-offset-8'>
 					<h2 className='text-amber-500 text-xl font-semibold tracking-wide'>
 						Get 25% Discount
 					</h2>
