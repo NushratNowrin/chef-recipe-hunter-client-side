@@ -22,3 +22,17 @@
     background-size: cover;
     height: 75vh;
 }
+
+/* Review */
+.review-1{
+    background-image: url('../../assets/Reviewbg-1.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.review-2{
+    background-image: url('../../assets/Reviewbg-2.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}

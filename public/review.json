@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "img": "/review/customer-1.png",
+        "name": "Robin",
+        "review": "Their behavior and delivery is soo good"
+    },
+    {
+        "id": 2,
+        "img": "/review/customer-2.png",
+        "name": "Bobin",
+        "review": "The taste and quality was speechless"
+    },
+    {
+        "id": 3,
+        "img": "/review/customer-3.png",
+        "name": "Ritu",
+        "review": "The best restaurant I have ever seen."
+    },
+    {
+        "id": 4,
+        "img": "/review/customer-4.png",
+        "name": "Mitu",
+        "review": "Always trusted and qualityfull service."
+    }
+]

@@ -1,6 +1,6 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Mousewheel, Keyboard } from "swiper/modules";
+import { Autoplay, Navigation, Pagination, Mousewheel, Keyboard } from "swiper/modules";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
@@ -19,14 +19,25 @@ const HomeRecipes = () => {
 			.then((res) => res.json())
 			.then((data) => setRecipes(data));
 	}, []);
-	console.log(recipes);
+
+  const pagination = {
+    clickable: true,
+  }
+	// console.log(recipes);
 	return (
 		<div className="sm:mx-20 my-20 text-center ">
             <p className={`${styles.secondaryHeader}`}>---From 10:00am to 8:00pm---</p>
             <h2 className={`${styles.primaryHeader} font-serif`}>ORDER ONLINE</h2>
 			<Swiper
 				cssMode={true}
-				pagination={true}
+				autoplay={{
+          delay: 0,
+          disableOnInteraction: true,
+        }}
+        pagination={{
+          clickable: true,
+        }}
+        navigation={true}
 				keyboard={true}
 				slidesPerView={5}
 				spaceBetween={10}
@@ -52,7 +63,7 @@ const HomeRecipes = () => {
                       spaceBetween: 0,
                     }
                   }}
-                  modules={[Navigation, Pagination, Mousewheel, Keyboard]}
+                  modules={[Autoplay, Navigation, Pagination, Mousewheel, Keyboard]}
 				className='mySwiper'>
 				
                 {recipes.map((recipe) => (

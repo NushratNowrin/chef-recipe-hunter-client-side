@@ -1,13 +1,11 @@
 import React from "react";
 import "./Home.css";
-import customer1 from "../../assets/customer-1.jpg";
-import customer2 from "../../assets/customer-2.jpg";
-import customer3 from "../../assets/customer-3.jpg";
-import customer4 from "../../assets/customer-4.jpg";
+
 import Chefs from "../../Single/Chefs/Chefs";
 import HomeRecipes from "./HomeRecipes";
 import ActiveLink from "../../SharedItems/ActiveLink/ActiveLink";
 import { styles } from "../../Style/style";
+import Review from "./Review";
 
 const Home = () => {
 	return (
@@ -54,51 +52,7 @@ const Home = () => {
 			</div>
 
 			{/* Clients review */}
-			<div className="pt-20 bg-neutral-100 ">
-			<p className={`${styles.secondaryHeader}`}>---What&lsquo;s our customer say---</p>
-            <h2 className={`${styles.primaryHeader}`}>Customer&lsquo;s Review</h2>
-				<div className='rounded-b-lg grid md:grid-cols-4 gap-8 p-8 pb-16 items-center justify-center'>
-					<div className='bg-stone-300 text-center p-5 md:m-0 mx-12 my-6 rounded-lg'>
-						<div className='h-40 overflow-hidden flex items-center  rounded-full '>
-							<img src={customer1} alt='' />
-						</div>
-						<h3 className='py-2 font-semibold'>Robin</h3>
-						<p className='text-stone-600 text-xs font-medium'>
-							Their behavior and delivery is soo good
-						</p>
-					</div>
-					<div className='bg-stone-300 text-center p-5 md:m-0 mx-12 my-6 rounded-lg'>
-						<div className='h-40 overflow-hidden flex items-center rounded-full'>
-							<img src={customer2} alt='' />
-						</div>
-						<h3 className='py-2 font-semibold'>Bobin</h3>
-						<p className='text-stone-600 text-xs font-medium'>
-							The taste and quality was speechless.
-						</p>
-					</div>
-					<div className='bg-stone-300 text-center p-5 md:m-0 mx-12 my-6 rounded-lg'>
-					<div className='h-40 overflow-hidden flex items-center rounded-full'>
-							<img
-								src={customer3}
-								alt=''
-							/>
-						</div>
-						<h3 className='py-2 font-semibold'>Ritu</h3>
-						<p className='text-stone-600 text-xs font-medium'>
-							The best restaurant I have ever seen.
-						</p>
-					</div>
-					<div className='bg-stone-300 text-center p-5 md:m-0 mx-12 my-6 rounded-lg'>
-					<div className='h-40 overflow-hidden flex items-center rounded-full'>
-							<img src={customer4} alt='' />
-						</div>
-						<h3 className='py-2 font-semibold'>Mitu</h3>
-						<p className='text-stone-600 text-xs font-medium '>
-							Always trusted and qualityfull service.
-						</p>
-					</div>
-				</div>
-			</div>
+			<Review></Review>
 		</div>
 	);
 };
