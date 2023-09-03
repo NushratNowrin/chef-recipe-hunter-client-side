@@ -17,7 +17,7 @@ const Recipe = (recipe) => {
 		<div>
 			<div className='mx-auto md:grid md:grid-cols-6 md:justify-center items-center border-solid border-2 border-neutral-950 rounded-xl overflow-hidden mb-5'>
 				<div className='md:col-span-2 flex justify-center'>
-					<img className='w-60' src={image} alt='' />
+					<img className='w-96 h-60' src={image} alt='' />
 				</div>
 				<div className='md:col-span-4 bg-neutral-950 text-white p-10 '>
 					<p className='text-lg font-semibold tracking-wide mb-2 text-red-300'>
@@ -33,7 +33,7 @@ const Recipe = (recipe) => {
 						<>
 							<div className='mb-2'>
 								<span>{cooking_method.substring(0, 100)}...</span>
-								<span className='text-red-400' onClick={() => setFold(!fold)}>
+								<span className='text-red-400 cursor-pointer' onClick={() => setFold(!fold)}>
 									Read More
 								</span>
 							</div>
@@ -42,7 +42,7 @@ const Recipe = (recipe) => {
 						<>
 							<div className='mb-2'>
 								<span>{cooking_method}</span>
-								<span className='text-red-400' onClick={() => setFold(!fold)}>
+								<span className='text-red-400 cursor-pointer' onClick={() => setFold(!fold)}>
 									Read Less
 								</span>
 							</div>
