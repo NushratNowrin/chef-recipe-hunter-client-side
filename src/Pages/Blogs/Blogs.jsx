@@ -12,8 +12,8 @@ const Blogs = () => {
 	}
 
 	return (
-		<div ref={ref}>
-			<div className='pt-20'>
+		<div className='pt-32'>
+			
 				<Pdf targetRef={ref} filename='Blogs.pdf'>
 					{({ toPdf }) => (
 						<button
@@ -23,8 +23,8 @@ const Blogs = () => {
 						</button>
 					)}
 				</Pdf>
-			</div>
-			<div ref= {ref} className="collapse-content">
+			
+			<div ref= {ref} >
 				<h2 className='text-3xl font-semibold text-white text-center'>
 					Some Important Questions
 				</h2>

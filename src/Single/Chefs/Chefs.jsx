@@ -26,7 +26,7 @@ const Chefs = () => {
 		<div className='text-center bg-neutral-100 py-20'>
 			<p className={`${styles.secondaryHeader}`}>---Search for your favoure chef?---</p>
             <h2 className={`${styles.primaryHeader}`}>All chefs are here</h2>
-			<div className='rounded-b-lg grid items-center justify-center lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 sm:gap-16 gap-5 lg:px-32 md:px-20 px-2'>
+			<div className='rounded-b-lg grid items-center justify-center lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 sm:gap-16 gap-5 lg:px-32 md:px-20 sm:px-10 p-5'>
 				{chefs.map((chef) => (
 					<div
 						key={chef.id}
