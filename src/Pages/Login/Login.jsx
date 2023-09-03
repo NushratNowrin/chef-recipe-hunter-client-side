@@ -115,7 +115,7 @@ const Login = () => {
 	return (
 		<div className='w-50 xs:p-10 bg-slate-300 text-center pt-32 pb-10'>
 			<div className='email-pass bg-black md:w-80 m-auto sm:p-16 px-8 py-16 rounded-md mb-10'>
-				<h4 className='text-2xl font-bold mb-6 text-red-300'>Please Login</h4>
+				<h4 className='text-2xl font-bold mb-6 text-red-400'>Please Login</h4>
 				<form onSubmit={getLoginData} className='login "text-white'>
 					<input
 						className='py-1 px-3 w-full rounded my-2'
@@ -154,7 +154,7 @@ const Login = () => {
 						<input
 							type='submit'
 							value='Login'
-							className=' bg-red-300 px-5 py-2 font-bold text-black rounded-lg hover:bg-red-600 hover:text-lg ease-in-out duration-300'
+							className=' bg-red-400 px-5 py-2 font-bold text-black rounded-lg hover:bg-red-600 hover:text-lg ease-in-out duration-300'
 						/>
 					</div>
 				</form><br></br>
@@ -171,13 +171,13 @@ const Login = () => {
 			<div className='text-xl font-bold '>Or</div>
 			<div>
 				<button
-					className='px-12 py-4 bg-black rounded-md text-red-300 font-semibold hover:text-red-500 my-2'
+					className='px-12 py-4 bg-black rounded-md text-red-400 font-semibold hover:text-red-500 my-2'
 					onClick={loginWithGoogle}>
 					Sign in with Google
 				</button>
 				<br></br>
 				<button
-					className='px-12 py-4 bg-black rounded-md text-red-300 font-semibold hover:text-red-500 my-2'
+					className='px-12 py-4 bg-black rounded-md text-red-400 font-semibold hover:text-red-500 my-2'
 					onClick={loginWithGithub}>
 					Sign in with Github
 				</button>

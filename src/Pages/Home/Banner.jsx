@@ -12,7 +12,7 @@ const Banner = () => {
 						highest quality dishes.
 					</p>
 					<div className='h-10  w-60 m-auto'>
-						<button className='bg-red-300 px-5 py-2 font-bold text-black rounded-lg tracking-wide hover:bg-red-500 hover:text-lg ease-in-out duration-300'>
+						<button className='bg-red-400 px-5 py-2 font-bold text-black rounded-lg tracking-wide hover:bg-red-500 hover:text-lg ease-in-out duration-300'>
 							Learn More
 						</button>
 					</div>

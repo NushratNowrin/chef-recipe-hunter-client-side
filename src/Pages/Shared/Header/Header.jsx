@@ -70,13 +70,13 @@ const Header = () => {
 								<div className='w-16 h-10 '>
 									<button
 										onClick={handleLogOut}
-										className=' bg-red-300 px-5 py-2 font-bold text-black rounded-lg hover:bg-red-600 hover:text-lg ease-in-out duration-300'>
+										className=' bg-red-400 px-5 py-2 font-bold text-black rounded-lg button-hover'>
 										Logout
 									</button>
 								</div>
 							</div>
 						) : (
-							<button className='bg-red-300 px-5 py-2 font-bold text-black rounded-lg hover:bg-red-600 hover:text-lg ease-in-out duration-300'>
+							<button className='bg-red-400 px-5 py-2 font-bold text-black rounded-lg button-hover flex flex-col mx-10 gap-3'>
 								<Link to='/login'>Login</Link>
 							</button>
 						)}
@@ -91,7 +91,7 @@ const Header = () => {
 				className={`md:flex justify-between items-center ${
 					open ? "" : "hidden"
 				}`}>
-				<ul className='md:flex hidden'>
+				<ul className='md:flex hidden items-center'>
 					<li className='mx-10 font-semibold menu-item'>
 						<ActiveLink to='/'>Home</ActiveLink>
 					</li>
@@ -122,13 +122,13 @@ const Header = () => {
 								<div className='w-16 h-10 '>
 									<button
 										onClick={handleLogOut}
-										className=' bg-red-300 px-5 py-2 font-bold text-black rounded-lg hover:bg-red-600 hover:text-lg ease-in-out duration-300'>
+										className=' bg-red-400 px-5 py-2 font-bold text-black rounded-lg button-hover'>
 										Logout
 									</button>
 								</div>
 							</div>
 						) : (
-							<button className='bg-red-300 px-5 py-2 font-bold text-black rounded-lg hover:bg-red-600 hover:text-lg ease-in-out duration-300'>
+							<button className='bg-red-400 px-5 py-2 font-bold text-black rounded-lg button-hover flex mx-10'>
 								<Link to='/login'>Login</Link>
 							</button>
 						)}

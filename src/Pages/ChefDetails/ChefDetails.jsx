@@ -33,14 +33,14 @@ const ChefDetails = () => {
 					<img className='h-96' src={image} alt='' />
 				</div>
 				<div className='md:col-span-3 bg-neutral-950 rounded-r-3xl p-10 text-white text-left '>
-					<p className='text-md font-semibold tracking-wide mb-4 text-red-300'>
+					<p className='text-md font-semibold tracking-wide mb-4 text-red-400'>
 						{name}
 					</p>
 					<div className='text-sm text-white mb-4'>{description}</div>
 
 					<div className='md:flex'>
 						<div className='flex items-center gap-1 mb-2'>
-							<GiCookingPot className='text-red-300 text-xl' />
+							<GiCookingPot className='text-red-400 text-xl' />
 							<p>{experience} Years of experience</p>
 						</div>
 						<div className='flex items-center gap-1 mb-1 md:ml-5'>
@@ -65,7 +65,7 @@ const ChefDetails = () => {
 								<img className="w-60" src={recipe.image} alt='' />
 							</div>
 							<div className='col-span-4 bg-neutral-950 text-white p-10 '>
-								<p className='text-lg font-semibold tracking-wide mb-2 text-red-300'>
+								<p className='text-lg font-semibold tracking-wide mb-2 text-red-400'>
 									{recipe.name}
 								</p>
                                 <div className="mb-2">
@@ -76,7 +76,7 @@ const ChefDetails = () => {
                                 </div>
                                 <div className="mb-2"><span className="text-yellow-300">Ratings:</span> {recipe.ratings}</div>
                                 <div className="h-10">
-                                <button className='bg-red-300 px-5 py-2 font-bold text-black rounded-lg hover:bg-red-600 ease-in-out duration-300' >
+                                <button className='bg-red-400 px-5 py-2 font-bold text-black rounded-lg hover:bg-red-600 ease-in-out duration-300' >
 										Add to Favourites{" "}
 									</button>
                                 </div>

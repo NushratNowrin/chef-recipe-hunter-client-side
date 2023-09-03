@@ -65,7 +65,7 @@ const Register = () => {
 	return (
 		<div className='w-50 xs:p-10 bg-slate-300 text-center pt-32 pb-10'>
 			<div className='bg-black md:w-8/12 m-auto py-16 md:px-20 rounded'>
-				<h4 className='text-2xl font-bold mb-6 text-red-300'>
+				<h4 className='text-2xl font-bold mb-6 text-red-400'>
 					Please Register
 				</h4>
 				<div className="lg:w-2/5 sm:w-3/5 w-2/3 mx-auto">
@@ -122,7 +122,7 @@ const Register = () => {
 							<input
 								type='submit'
 								value='Register'
-								className=' bg-red-300 px-5 py-2 font-bold text-black rounded-lg hover:bg-red-600 hover:text-lg ease-in-out duration-300'
+								className=' bg-red-400 px-5 py-2 font-bold text-black rounded-lg hover:bg-red-600 hover:text-lg ease-in-out duration-300'
 							/>
 						</div>
 					</form>
