@@ -4,7 +4,7 @@ import ErrorImg2 from "../../assets/404.png";
 
 const Error = () => {
 	return (
-		<div className='py-20 pt-40 bg-red-200 p-10 rounded-xl h-screen flex flex-col justify-center items-center'>
+		<div className=' bg-red-200 h-screen flex flex-col justify-center items-center'>
 			<div className='flex justify-center h-1/2 w-1/2'>
 				<img src={ErrorImg2} alt='' className="border-2 shadow-lg border-red-400 rounded-full"/>
 			</div>
