@@ -12,7 +12,7 @@ const Discount = () => {
 						Explore Special Taste & The Best Quality
 					</p>
 					<div className='h-16 flex items-center justify-center'>
-						<button className='bg-amber-600 text-white px-5 py-3 font-bold rounded-2xl tracking-wide hover:bg-amber-700 hover:text-lg ease-in-out duration-300'>
+						<button className='bg-amber-600 text-white px-5 py-3 font-bold rounded-2xl tracking-wide button-hover'>
 							<ActiveLink to='/recipes'>Show All Items</ActiveLink>
 						</button>
 					</div>
