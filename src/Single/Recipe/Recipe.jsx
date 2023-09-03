@@ -61,7 +61,7 @@ const Recipe = (recipe) => {
 						) : (
 							<button
 								onClick={handleFavBtn}
-								className='bg-red-400 px-5 py-2 font-bold text-black rounded-lg hover:bg-red-600 hover:text-white ease-in-out duration-300'>
+								className='bg-red-400 px-5 py-2 font-bold text-black rounded-lg button-hover'>
 								Add to Favourites
 							</button>
 						)}

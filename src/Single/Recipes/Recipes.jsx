@@ -36,7 +36,7 @@ const Recipes = () => {
 					{recipes.length >= noOfRecipes ? (
 						<button
 							onClick={() => loadMore()}
-							className='banner-button px-5 py-3 rounded-md text-white font-semibold bg-red-400 '>
+							className='px-5 py-3 rounded-md text-white button-hover bg-red-400'>
 							See More Recipes
 						</button>
 					) : (
