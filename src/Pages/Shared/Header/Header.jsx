@@ -20,7 +20,7 @@ const Header = () => {
 	};
 	return (
 		<div className='w-full flex justify-between items-center fixed z-50 bg-black bg-opacity-75 md:px-20 p-5 text-white'>
-			<h3 className='font-bold text-xl tracking-wide text-red-300'>
+			<h3>
 				<Link to='/'>
 					<img className='h-20' src={logo} alt='' />
 				</Link>
@@ -48,10 +48,9 @@ const Header = () => {
 						<li className='mx-10 font-semibold menu-item'>
 							<ActiveLink to='/recipes'>Recipes</ActiveLink>
 						</li>
-					</ul>
-					<div className='h-10 w-28 flex justify-end mt-3'>
+						
 						{user ? (
-							<div className='flex justify-end items-center'>
+							<div className='flex flex-col mx-10 gap-3'>
 								{user.photoURL != null ? (
 									<img
 										className='h-10 w-10 rounded-full'
@@ -81,7 +80,9 @@ const Header = () => {
 								<Link to='/login'>Login</Link>
 							</button>
 						)}
-					</div>
+					
+					</ul>
+					
 				</div>
 			</div>
 
@@ -100,40 +101,38 @@ const Header = () => {
 					<li className='mx-10 font-semibold menu-item'>
 						<ActiveLink to='/recipes'>Recipes</ActiveLink>
 					</li>
-				</ul>
-				<div className='h-10 w-28 md:flex hidden'>
 					{user ? (
-						<div className='flex justify-between items-center'>
-							{user.photoURL != null ? (
-								<img
-									className='h-10 w-10 rounded-full'
-									src={user.photoURL}
-									title={user.email}
-									alt=''
-								/>
-							) : (
-								<img
-									className='h-10 w-10 rounded-full'
-									src='https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png'
-									title={user.email}
-									alt=''
-								/>
-							)}
+							<div className='flex mx-10 gap-5'>
+								{user.photoURL != null ? (
+									<img
+										className='h-10 w-10 rounded-full'
+										src={user.photoURL}
+										title={user.email}
+										alt=''
+									/>
+								) : (
+									<img
+										className='h-10 w-10 rounded-full'
+										src='https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png'
+										title={user.email}
+										alt=''
+									/>
+								)}
 
-							<div className='w-16 h-10 '>
-								<button
-									onClick={handleLogOut}
-									className=' bg-red-300 px-5 py-2 font-bold text-black rounded-lg hover:bg-red-600 hover:text-lg ease-in-out duration-300'>
-									Logout
-								</button>
+								<div className='w-16 h-10 '>
+									<button
+										onClick={handleLogOut}
+										className=' bg-red-300 px-5 py-2 font-bold text-black rounded-lg hover:bg-red-600 hover:text-lg ease-in-out duration-300'>
+										Logout
+									</button>
+								</div>
 							</div>
-						</div>
-					) : (
-						<button className='bg-red-300 px-5 py-2 font-bold text-black rounded-lg hover:bg-red-600 hover:text-lg ease-in-out duration-300'>
-							<Link to='/login'>Login</Link>
-						</button>
-					)}
-				</div>
+						) : (
+							<button className='bg-red-300 px-5 py-2 font-bold text-black rounded-lg hover:bg-red-600 hover:text-lg ease-in-out duration-300'>
+								<Link to='/login'>Login</Link>
+							</button>
+						)}
+				</ul>
 			</div>
 		</div>
 	);
