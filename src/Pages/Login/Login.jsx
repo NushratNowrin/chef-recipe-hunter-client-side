@@ -113,8 +113,8 @@ const Login = () => {
 	};
 
 	return (
-		<div className='w-50 p-10 bg-slate-300 text-center pt-32'>
-			<div className='email-pass bg-black md:w-80 m-auto p-16 rounded-md mb-10'>
+		<div className='w-50 xs:p-10 bg-slate-300 text-center pt-32 pb-10'>
+			<div className='email-pass bg-black md:w-80 m-auto sm:p-16 px-8 py-16 rounded-md mb-10'>
 				<h4 className='text-2xl font-bold mb-6 text-red-300'>Please Login</h4>
 				<form onSubmit={getLoginData} className='login "text-white'>
 					<input
