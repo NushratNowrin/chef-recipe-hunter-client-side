@@ -23,7 +23,7 @@ const Review = () => {
 	const progressCircle = useRef(null);
 	const progressContent = useRef(null);
 	return (
-		<div className='my-20 '>
+		<div className='sm:my-20 my-0'>
 			<div className='mb-10'></div>
 			<div className='grid sm:grid-cols-2 grid-cols-1 items-center justify-center gap-0 lg:mx-40'>
 				{/* Slider Review */}

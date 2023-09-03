@@ -63,7 +63,7 @@ const Register = () => {
 	};
 
 	return (
-		<div className='w-50 p-10 bg-slate-300 text-center pt-20'>
+		<div className='w-50 p-10 bg-slate-300 text-center pt-32'>
 			<div className='bg-black md:w-8/12 m-auto py-16 md:px-20 rounded mb-10'>
 				<h4 className='text-2xl font-bold mb-6 text-red-300'>Please Register</h4>
 				<form onSubmit={getFormData}>
