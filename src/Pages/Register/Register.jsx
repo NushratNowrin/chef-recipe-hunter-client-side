@@ -35,14 +35,14 @@ const Register = () => {
 		console.log(
 			`email: ${email}
 			password: ${password}`
-		)
+		);
 
 		//create fireBase Auth
 		createUser(email, password)
-		.then(result => {
-			// Signed in 
-			const loggeduser = result.user;
-				console.log(loggeduser)
+			.then((result) => {
+				// Signed in
+				const loggeduser = result.user;
+				console.log(loggeduser);
 				setShowError("");
 				setSuccess("User Has been created successfully");
 				event.target.reset();
@@ -63,65 +63,72 @@ const Register = () => {
 	};
 
 	return (
-		<div className='w-50 p-10 bg-slate-300 text-center pt-32'>
-			<div className='bg-black md:w-8/12 m-auto py-16 md:px-20 rounded mb-10'>
-				<h4 className='text-2xl font-bold mb-6 text-red-300'>Please Register</h4>
-				<form onSubmit={getFormData}>
-					<input
-						type='text'
-						name='name'
-						id='name'
-						placeholder='Enter Name'
-						required
-						className='py-1 px-3 rounded my-2'
-					/>
-					<br />
-					<input
-						type='email'
-						name='email'
-						id='email'
-						placeholder='Enter Email Address'
-						required
-						className='py-1 px-3 rounded my-2'
-					/>
-					<br />
-					<div className='flex items-center justify-center'>
+		<div className='w-50 xs:p-10 bg-slate-300 text-center pt-32 pb-10'>
+			<div className='bg-black md:w-8/12 m-auto py-16 md:px-20 rounded'>
+				<h4 className='text-2xl font-bold mb-6 text-red-300'>
+					Please Register
+				</h4>
+				<div className="lg:w-2/5 sm:w-3/5 w-2/3 mx-auto">
+					<form onSubmit={getFormData}>
 						<input
-							type={passwordType}
-							onChange={handlePasswordChange}
-							value={passwordInput}
-							name='password'
-							id='password'
-							placeholder='Enter Password'
+							type='text'
+							name='name'
+							id='name'
+							placeholder='Enter Name'
 							required
-							className='py-1 w-3/5 md:w-2/5 px-3 rounded-l my-2'
+							className='py-1 px-3 rounded my-2 w-full'
 						/>
-						<span onClick={togglePassword}>
-							{passwordType === "password" ? (
-								<EyeIcon className='eyeIcon bg-white' />
-							) : (
-								<EyeSlashIcon className='eyeIcon bg-white' />
-							)}
-						</span>
-					</div>
-
-					<input
-						type='text'
-						name='photoURL'
-						id='photoURL'
-						placeholder='Insert your Photo URL'
-						className='py-1 px-3 rounded my-2'
-					/>
-					<div className='text-yellow-300 font-bold'>{showError}</div>
-					<div className='text-green-400 font-semibold'>{success}</div><br></br>
-					<div className=' h-10 mx-auto'>
+						<br />
 						<input
-							type='submit'
-							value='Register'
-							className=' bg-red-300 px-5 py-2 font-bold text-black rounded-lg hover:bg-red-600 hover:text-lg ease-in-out duration-300'
+							type='email'
+							name='email'
+							id='email'
+							placeholder='Enter Email Address'
+							required
+							className='py-1 px-3 rounded my-2 w-full'
 						/>
-					</div>
-				</form><br></br>
+						<br />
+						<div className='flex items-center justify-center'>
+							<input
+								type={passwordType}
+								onChange={handlePasswordChange}
+								value={passwordInput}
+								name='password'
+								id='password'
+								placeholder='Enter Password'
+								required
+								className='py-1 px-3 rounded-l my-2 w-full'
+							/>
+							<span onClick={togglePassword}>
+								{passwordType === "password" ? (
+									<EyeIcon className='eyeIcon bg-white' />
+								) : (
+									<EyeSlashIcon className='eyeIcon bg-white' />
+								)}
+							</span>
+						</div>
+
+						<input
+							type='text'
+							name='photoURL'
+							id='photoURL'
+							placeholder='Insert your Photo URL'
+							className='py-1 px-3 rounded my-2 w-full'
+						/>
+						<div className='text-yellow-300 font-bold'>{showError}</div>
+						<div className='text-green-400 font-semibold'>{success}</div>
+						<br></br>
+						<div className=' h-10 mx-auto'>
+							<input
+								type='submit'
+								value='Register'
+								className=' bg-red-300 px-5 py-2 font-bold text-black rounded-lg hover:bg-red-600 hover:text-lg ease-in-out duration-300'
+							/>
+						</div>
+					</form>
+				</div>
+
+				<br></br>
 
 				<div className='text-white'>
 					Already have an account? Please{" "}
