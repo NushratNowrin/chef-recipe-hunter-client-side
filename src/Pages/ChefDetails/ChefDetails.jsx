@@ -28,7 +28,7 @@ const ChefDetails = () => {
 	return (
 		<div>
 			{/* Banner */}
-			<div className='md:grid md:grid-cols-5 justify-center items-center gap-2 my-10 bg-neutral-100 md:px-20'>
+			<div className='md:grid md:grid-cols-5 justify-center items-center gap-2 bg-neutral-100 md:px-20 pt-40'>
 				<div className='md:col-span-2	'>
 					<img className='h-96' src={image} alt='' />
 				</div>
