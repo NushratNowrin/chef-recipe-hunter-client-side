@@ -1,9 +1,10 @@
+
 import React, { useState } from "react";
 import { useNavigation } from "react-router-dom";
 import { styles } from "../../Style/style";
 
-const FAQ = () => {
-	const [isOpen1, setIsOpen1] = useState(false);
+const Question = () => {
+    const [isOpen1, setIsOpen1] = useState(false);
 	const [isOpen2, setIsOpen2] = useState(false);
 	const [isOpen3, setIsOpen3] = useState(false);
 	const [isOpen4, setIsOpen4] = useState(false);
@@ -19,8 +20,8 @@ const FAQ = () => {
 	const toggleAccordion4 = () => {
 		setIsOpen4(!isOpen4);
 	};
-	return (
-		<div className='py-20 md:px-40 sm:px-20 px-10 bg-neutral-200'>
+    return (
+        <div className='py-20 md:px-40 sm:px-20 px-10 bg-neutral-200'>
 			<div>
 				<p className={`${styles.secondaryHeader}`}>---Any Question---</p>
 				<h2 className={`${styles.primaryHeader}`}>Frequently Asked Question</h2>
@@ -97,7 +98,7 @@ const FAQ = () => {
 				)}
 			</div>
 		</div>
-	);
+    );
 };
 
-export default FAQ;
+export default Question;

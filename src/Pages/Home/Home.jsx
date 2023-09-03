@@ -3,12 +3,10 @@ import "./Home.css";
 
 import Chefs from "../../Single/Chefs/Chefs";
 import HomeRecipes from "./HomeRecipes";
-import ActiveLink from "../../SharedItems/ActiveLink/ActiveLink";
-import { styles } from "../../Style/style";
 import Review from "./Review";
-import FAQ from "./FAQ";
 import Banner from "./Banner";
 import Discount from "./Discount";
+import Question from "./Question";
 
 const Home = () => {
 	return (
@@ -18,7 +16,7 @@ const Home = () => {
 			<Chefs />
 			<Discount />
 			<Review />
-			<FAQ></FAQ>
+			<Question />
 		</div>
 	);
 };
