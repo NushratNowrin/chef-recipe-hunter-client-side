@@ -154,7 +154,7 @@ const Login = () => {
 						<input
 							type='submit'
 							value='Login'
-							className=' bg-red-400 px-5 py-2 font-bold text-black rounded-lg hover:bg-red-600 hover:text-lg ease-in-out duration-300'
+							className=' bg-red-400 px-5 py-2 font-bold text-black rounded-lg button-hover'
 						/>
 					</div>
 				</form><br></br>
@@ -171,13 +171,13 @@ const Login = () => {
 			<div className='text-xl font-bold '>Or</div>
 			<div>
 				<button
-					className='px-12 py-4 bg-black rounded-md text-red-400 font-semibold hover:text-red-500 my-2'
+					className='px-12 py-4 bg-black rounded-md text-red-400 font-semibold  my-2 button-hover'
 					onClick={loginWithGoogle}>
 					Sign in with Google
 				</button>
 				<br></br>
 				<button
-					className='px-12 py-4 bg-black rounded-md text-red-400 font-semibold hover:text-red-500 my-2'
+					className='px-12 py-4 bg-black rounded-md text-red-400 font-semibold button-hover my-2'
 					onClick={loginWithGithub}>
 					Sign in with Github
 				</button>
