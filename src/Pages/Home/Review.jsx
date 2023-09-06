@@ -1,6 +1,5 @@
 import React from "react";
 import { styles } from "../../Style/style";
-import bgimg from "../../assets/Reviewbg.jpg";
 import "./Home.css";
 import { useState, useEffect, useRef } from "react";
 // Import Swiper React components
@@ -20,8 +19,6 @@ const Review = () => {
 			.then((data) => setReviews(data));
 	}, []);
 	// Swiper
-	const progressCircle = useRef(null);
-	const progressContent = useRef(null);
 	return (
 		<div className='sm:my-20 my-0'>
 			<div className='mb-10'></div>

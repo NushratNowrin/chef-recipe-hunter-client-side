@@ -31,7 +31,7 @@ const Question = () => {
 					className='accordion-header flex justify-between items-center text-lg bg-red-400 text-black py-3 px-8'
 					onClick={toggleAccordion1}>
 					<h3>How do I Claim a Free Coupon?</h3>
-					<span className='mr-3'>{isOpen1 ? "-" : "+"}</span>
+					<span>{isOpen1 ? "-" : "+"}</span>
 				</div>
 				{isOpen1 && (
 					<div className='text-base accordion-content bg-red-200 py-8 px-8'>
